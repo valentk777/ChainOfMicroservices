@@ -1,3 +1,5 @@
+![Last Commit](https://img.shields.io/github/last-commit/valentk777/ChainOfMicroservices.svg)
+
 # ChainOfMicroservices
 Multiple microservices implemented with different programming languages joined to a single REST call chain.
 
@@ -9,13 +11,15 @@ The value of creating it is to try simple (but not too simple) functionality wit
 
 ## Infrastructure
 - each service will contain a separate folder for implementation
-- each service will be packed as docker image
-- all chain will be started using docker compose
+- each service will be packed as a docker image
+- the chain will start using the docker-compose
 - each service contains one post endpoint
-- each service will contain health endpoint
-- when serviceA will make a call to serviceB, serviceB will set a local variable (bool) indicating that this service is responsible for making another call to pre-defined serviceC.
+- each service will contain a health endpoint
+- when service-A makes a call to service-B, service-B will set a local variable (bool) indicating that this service is responsible for making another call to pre-defined service-C.
+- each service will contain tests to test functionality for a single service
 
 ## List of implemented languages
-| Status | Microservice | Code |
-| InProgress | C# | <> |
-
+- Python -> Completed
+- C# -> InProgress
+- Java -> NotStarted
+- Scala -> NotStarted
