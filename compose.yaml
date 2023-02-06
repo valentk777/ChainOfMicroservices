@@ -2,5 +2,13 @@ version: "3.9"
 services:
   python-api:
     build: microservices\python\.
+    container_name: python-api
+    hostname: python-api
     ports:
       - "5551:5551"
+  javascript-api:
+    build: microservices\javascript\.
+    container_name: javascript-api
+    hostname: javascript-api
+    ports:
+      - "5552:5552"

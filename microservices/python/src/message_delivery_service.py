@@ -1,8 +1,6 @@
 import logging
 
-import requests
-
-from config import CONFIG
+from src.config import CONFIG
 
 logger = logging.getLogger("python-api")
 
@@ -13,5 +11,6 @@ class MessageDeliveryService:
         logger.info(f"Message {message['message']}")
         logger.info(f"Send request to {CONFIG['external_api_path']}")
 
-        result = requests.post(CONFIG["external_api_path"], json=message)
-        return result.ok
+        # result = requests.post(CONFIG["external_api_path"], json=message)
+        # return result.ok
+        return True
