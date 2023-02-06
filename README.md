@@ -18,8 +18,19 @@ The value of creating it is to try simple (but not too simple) functionality wit
 - when service-A makes a call to service-B, service-B will set a local variable (bool) indicating that this service is responsible for making another call to pre-defined service-C.
 - each service will contain tests to test functionality for a single service
 
+## Development
+In order to run all chain of services, you can use `docker-compose`. In main root dir run command: 
+```
+docker-compose up
+```
+In addition, under documentation folder I added Postman collection to test each service manually and to post initial message call for a service chain.
+
 ## List of implemented languages
-- Python -> Completed
-- C# -> InProgress
-- Java -> NotStarted
-- Scala -> NotStarted
+
+| Language   | Port   | Implementation |
+| ---------- |:------:| --------------:|
+| Python     | `5551` | *Completed*    |
+| Javascript | `5552` | *InProgress*   |
+| C#         | `5553` | *NotStarted*   |
+| Java       | `5554` | *NotStarted*   |
+| Scala      | `5555` | *NotStarted*   |
