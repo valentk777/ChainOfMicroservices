@@ -2,8 +2,8 @@ import logging
 
 from waitress import serve
 
-from app import create_app
-from config import CONFIG
+from src.app import create_app
+from src.config import CONFIG
 
 if __name__ == "__main__":
     logger = logging.getLogger("python-api")

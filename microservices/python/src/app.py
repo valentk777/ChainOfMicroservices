@@ -5,9 +5,10 @@ from time import strftime
 from flask import Flask, request
 
 from message_delivery_service import MessageDeliveryService
+from config import CONFIG
 
 logger = logging.getLogger("python-api")
-timestamp_format = strftime("[%Y-%b-%d %H:%M]")
+timestamp_format = strftime("[%Y-%m-%d %H:%M]")
 
 
 def create_app() -> Flask:
@@ -54,8 +55,8 @@ def create_app() -> Flask:
             request.scheme,
             request.full_path,
             tb)
-        return e.status_code
+        return 501
 
-    logger.warning("Application started")
+    logger.warning(f"API is listening on port {CONFIG['service_port']}")
 
     return app
