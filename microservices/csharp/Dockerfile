@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:7:0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 
 COPY . /app
 WORKDIR /app
@@ -12,4 +12,5 @@ WORKDIR /app
 
 COPY --from=build /release .
 EXPOSE 5553
+ENV ASPNETCORE_URLS=http://+:5553
 ENTRYPOINT dotnet CSharpApi.dll

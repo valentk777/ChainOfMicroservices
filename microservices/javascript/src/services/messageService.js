@@ -3,6 +3,8 @@ const config = require("../../config");
 const sendMessage = (body) => {
   console.log(`Message: ${body.message}`)
 
+  body.message += "JavaScript, ";
+
   const requestParameters = {
     method: 'POST',
     headers: {
@@ -23,23 +25,6 @@ const sendMessage = (body) => {
       console.error('Error:', error);
       return false;
     });
-
-
-
-  // try {
-  //   fetch(config.external_api_path, requestParameters)
-  //   .then(data => {return data.json()})
-  //   .then(res => {console.log(res)})
-  //   .catch(error => {
-  //     console.error(`Failed to send message to ${config.external_api_path}`)
-  //     console.error(error)
-  //   })
-    
-  //   return true;
-  // } catch (e) {
-  //   console.log(e);
-  //   return false;
-  // }
 }
 
 module.exports = {

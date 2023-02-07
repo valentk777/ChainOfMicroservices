@@ -1,11 +1,8 @@
-const messageService = require("../services/apiService");
+const messageService = require("../services/messageService");
 const status = require("../status");
 
 const postMessage = (req, res) => {
   const { body } = req;
-
-  body.message += "JavaScript, ";
-
   const result = messageService.sendMessage(body);
 
   if (result) {

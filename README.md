@@ -30,7 +30,7 @@ In addition, under documentation folder I added Postman collection to test each 
 | Language   | Port   | Implementation |
 | ---------- |:------:| --------------:|
 | Python     | `5551` | *Completed*    |
-| Javascript | `5552` | *InProgress*   |
-| C#         | `5553` | *NotStarted*   |
-| Java       | `5554` | *NotStarted*   |
+| Javascript | `5552` | *Completed*    |
+| C#         | `5553` | *Completed*    |
+| Java       | `5554` | *InProgress*   |
 | Scala      | `5555` | *NotStarted*   |
