@@ -3,6 +3,11 @@ const status = require("../status");
 
 const postMessage = (req, res) => {
   const { body } = req;
+
+  if (body === null) {
+    res.send(status.statusFailed);
+  }
+  
   const result = messageService.sendMessage(body);
 
   if (result) {

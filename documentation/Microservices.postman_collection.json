@@ -7,53 +7,157 @@
 	},
 	"item": [
 		{
-			"name": "python - health",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:5551/health",
-					"host": [
-						"localhost"
-					],
-					"port": "5551",
-					"path": [
-						"health"
-					]
+			"name": "Python",
+			"item": [
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5551/health",
+							"host": [
+								"localhost"
+							],
+							"port": "5551",
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"call_from: \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5551/api/message",
+							"host": [
+								"localhost"
+							],
+							"port": "5551",
+							"path": [
+								"api",
+								"message"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "python - message",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"message\": \"call_from: \"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Javascript",
+			"item": [
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5552/health",
+							"host": [
+								"localhost"
+							],
+							"port": "5552",
+							"path": [
+								"health"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:5551/api/message",
-					"host": [
-						"localhost"
-					],
-					"port": "5551",
-					"path": [
-						"api",
-						"message"
-					]
+				{
+					"name": "Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"call_from: \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5552/api/message",
+							"host": [
+								"localhost"
+							],
+							"port": "5552",
+							"path": [
+								"api",
+								"message"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "C#",
+			"item": [
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5553/health",
+							"host": [
+								"localhost"
+							],
+							"port": "5553",
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"call_from: \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5553/api/message",
+							"host": [
+								"localhost"
+							],
+							"port": "5553",
+							"path": [
+								"api",
+								"message"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

@@ -24,7 +24,9 @@ def create_app() -> Flask:
     @app.post("/api/message")
     def set_provided_status_for_another_service_call() -> dict:
         content = request.json
-        content["message"] += "Python, "
+
+        if content is None:
+            return StatusFailed
 
         result = MessageDeliveryService.send_message(content)
 

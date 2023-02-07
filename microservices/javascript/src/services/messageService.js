@@ -1,9 +1,20 @@
-const config = require("../../config");
+const sendMessage = async (body) => {
 
-const sendMessage = (body) => {
-  console.log(`Message: ${body.message}`)
+  if (body.message === null) {
+    return true;
+  }
+
+  const makeServiceCall = !(body.message.includes("JavaScript"));
+
+  if (!makeServiceCall) {
+    console.info("Service already published a message");
+    return true;
+  }
 
   body.message += "JavaScript, ";
+
+  console.info(`Message: ${JSON.stringify(body.message)}`)
+  console.info(`Send request to ${config.external_api_path}`);
 
   const requestParameters = {
     method: 'POST',
@@ -12,8 +23,6 @@ const sendMessage = (body) => {
     },
     body: JSON.stringify(body),
   }
-  
-  console.info(`Send request to ${config.external_api_path}`)
 
   fetch(config.external_api_path, requestParameters)
     .then((response) => response.json())

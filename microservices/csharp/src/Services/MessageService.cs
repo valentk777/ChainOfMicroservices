@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Microsoft.Extensions.Logging;
+using System.Text;
 using System.Text.Json;
 
 namespace CSharpApi.Services;
@@ -7,7 +8,6 @@ public class MessageService : IMessageService
 {
     private readonly ILogger<MessageService> _logger;
     private readonly IConfiguration _configuration;
-    private bool _makeServiceCall;
 
     public MessageService(ILogger<MessageService> logger, IConfiguration configuration)
     {
@@ -17,26 +17,28 @@ public class MessageService : IMessageService
 
     public async Task<bool> SendMessage(MessageRequest message)
     {
-        if(message.Message == null)
+        if (message.Message == null)
         {
             return true;
         }
 
-        _makeServiceCall = !message.Message.Contains("CSharp");
+        var makeServiceCall = !message.Message.Contains("CSharp");
 
-        if (!_makeServiceCall)
+        if (!makeServiceCall)
         {
             _logger.LogInformation("Service already published a message");
             return true;
         }
 
-        _logger.LogInformation($"Send message {message.Message}");
-
         message.Message += "CSharp, ";
+
+        _logger.LogInformation($"Send message {message.Message}");
 
         var url = _configuration.GetValue<string>("App:ExternalApiPath");
         var json = JsonSerializer.Serialize(message);
         var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+        _logger.LogInformation($"Send request to {url}");
 
         using var client = new HttpClient();
 
