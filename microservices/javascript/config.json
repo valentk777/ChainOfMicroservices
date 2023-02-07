@@ -1,4 +1,4 @@
 {
     "service_port": 5552,
-    "external_api_path": "http://localhost:5551/api/message"
+    "external_api_path": "http://csharp-api:5553/api/message"
 }

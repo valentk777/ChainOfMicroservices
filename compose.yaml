@@ -6,9 +6,17 @@ services:
     hostname: python-api
     ports:
       - "5551:5551"
+
   javascript-api:
     build: microservices\javascript\.
     container_name: javascript-api
     hostname: javascript-api
     ports:
       - "5552:5552"
+      
+  csharp-api:
+    build: microservices\csharp\.
+    container_name: csharp-api
+    hostname: csharp-api
+    ports:
+      - "5553:5553"

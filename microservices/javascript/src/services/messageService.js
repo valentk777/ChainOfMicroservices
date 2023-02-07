@@ -1,3 +1,5 @@
+const config = require("../../config");
+
 const sendMessage = async (body) => {
 
   if (body.message === null) {
@@ -16,24 +18,27 @@ const sendMessage = async (body) => {
   console.info(`Message: ${JSON.stringify(body.message)}`)
   console.info(`Send request to ${config.external_api_path}`);
 
-  const requestParameters = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(body),
-  }
+  const dataToSend = JSON.stringify(body);
+  fetch(config.external_api_path, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: dataToSend
+  })
+      .then(resp => {
+          if (resp.status === 200) {
+              return resp.json()
+          } else {
+              console.log("Status: " + resp.status)
+              return Promise.reject("server")
+          }
+      })
+      .catch(err => {
+          if (err === "server") {
+            return false;
+          }
 
-  fetch(config.external_api_path, requestParameters)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Success:', data);
-      return true;
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-      return false;
-    });
+          console.error(err);
+      })
 }
 
 module.exports = {
