@@ -1,0 +1,12 @@
+{
+  "environment": "development",
+  "externalPath": "http://python-api:5551/api/message",
+
+  "server": {
+    "port": 5554
+  },
+  
+  "logger": {
+    "level": "debug"
+  }
+}

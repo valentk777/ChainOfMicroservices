@@ -1,0 +1,20 @@
+[package]
+name = "rust"
+version = "0.1.0"
+authors = ["valentk777 <valentk777@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+# for web rest endpoints
+actix-web = "^4"
+# logging
+serde = { version = "^1", features = ["derive"] }
+# for enums
+strum_macros = "^0.24"
+strum = { version = "^0.24", features = ["derive"] }
+# for logging
+env_logger = "^0.10"
+log = "^0.4"
+derive_more = "^0.99"
+# for moking request
+reqwest = { version = "0.11", features = ["blocking"] }
