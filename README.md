@@ -25,6 +25,9 @@ docker-compose up
 ```
 In addition, under documentation folder I added Postman collection to test each service manually and to post initial message call for a service chain.
 
+
+Python -> Javascript -> C# -> Rust -> Python ...
+
 ## List of implemented languages
 
 | Language   | Port   | Implementation |
@@ -32,5 +35,9 @@ In addition, under documentation folder I added Postman collection to test each 
 | Python     | `5551` | *Completed*    |
 | Javascript | `5552` | *Completed*    |
 | C#         | `5553` | *Completed*    |
-| Java       | `5554` | *InProgress*   |
-| Scala      | `5555` | *NotStarted*   |
+| Rust       | `5554` | *Completed*   |
+| Java       | `5555` | *InProgress*   |
+| Scala      | `5556` | *NotStarted*   |
+
+
+

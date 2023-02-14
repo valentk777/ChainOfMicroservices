@@ -6,7 +6,6 @@ use actix_web::{
 use crate::api::errors::ApiError;
 use crate::models::status::Status;
 
-
 #[get("health")]
 pub async fn get_health() -> Result<Json<Status>, ApiError> {
     let status = Status {

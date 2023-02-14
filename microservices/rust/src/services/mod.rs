@@ -1,1 +1,1 @@
-pub mod messageDeliveryService;
+pub mod message_delivery_service;

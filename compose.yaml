@@ -13,10 +13,17 @@ services:
     hostname: javascript-api
     ports:
       - "5552:5552"
-      
+
   csharp-api:
     build: microservices\csharp\.
     container_name: csharp-api
     hostname: csharp-api
     ports:
       - "5553:5553"
+
+  rust-api:
+    build: microservices\rust\.
+    container_name: rust-api
+    hostname: rust-api
+    ports:
+      - "5554:5554"

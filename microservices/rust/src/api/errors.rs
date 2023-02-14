@@ -1,8 +1,9 @@
 use std::fmt::{Display, Formatter};
+
 use actix_web::{
     error::ResponseError,
-    HttpResponse,
     http::{header::ContentType, StatusCode},
+    HttpResponse,
 };
 use derive_more::{Display, Error};
 
